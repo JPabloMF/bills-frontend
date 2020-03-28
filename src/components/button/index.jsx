@@ -18,7 +18,8 @@ Button.defaultProps = {
 Button.propTypes = {
   title: PropTypes.string.isRequired,
   type: PropTypes.string,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  onClick: PropTypes.func.isRequired
 };
 
 export default Button;

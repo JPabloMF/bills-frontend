@@ -1,10 +1,10 @@
 import React from "react";
+import "semantic-ui-css/semantic.min.css";
 
 import { Provider } from "react-redux";
 import store from "../store";
 
 import SignIn from "../screens/signin/index";
-import "semantic-ui-css/semantic.min.css";
 
 function App() {
   return (

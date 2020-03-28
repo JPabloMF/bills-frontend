@@ -1,8 +1,6 @@
 import { createStore, combineReducers } from 'redux';
 import {loginReducer} from "./reducers/index";
-
-const REDUX_DEVTOOLS = 
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+import REDUX_DEVTOOLS from '../constants';
 
 const store = createStore(combineReducers({login:loginReducer}), REDUX_DEVTOOLS);
 

@@ -1,42 +1,42 @@
 import React, { useState } from "react";
-import Input from "../../components/input/index";
-import Button from "../../components/button/index";
 
 import { connect } from "react-redux";
 import {saveLogin, cleanLogin} from "../../store/actions/index";
 
+import Input from "../../components/input/index";
+import Button from "../../components/button/index";
+
+
 const SignIn = props => {
   const [inputs, setInputs] = useState({ email: "", password: "" });
-  const { email, password } = inputs;
 
-  const handleChange = e => {
-    const { name, value } = e.target;
-    setInputs(inputs => ({ ...inputs, [name]: value }));
+  const handleChange = ({target}) => {
+    const { name, value } = target;
+    setInputs({ ...inputs, [name]: value });
   };
 
-  const handleSubmite = e => {
+  const handleSubmit = e => {
     e.preventDefault();
-    props.saveLogin({...inputs})
+    props.saveLogin(inputs)
   };
 
   const handleClean =()=>{
-    console.log('ddjd')
     props.cleanLogin();
   }
 
   return (
-    <form onSubmit={handleSubmite}>
+    <form onSubmit={handleSubmit}>
       <Input
         placeholder="Email"
         onChange={handleChange}
-        value={email}
+        value={inputs.email}
         name="email"
         type="email"
       />
       <Input
         placeholder="Password"
         onChange={handleChange}
-        value={password}
+        value={inputs.password}
         name="password"
         type="password"
       />
@@ -47,7 +47,7 @@ const SignIn = props => {
 };
 
 const mapStateToProps = (state)=>{
-  const {login : {inputs}} = state
+  const {login : {inputs}} = state;
   return {inputs};
 };
 

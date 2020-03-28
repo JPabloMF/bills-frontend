@@ -5,7 +5,7 @@ export const loginReducer = (state = {}, action) => {
     case SAVE_LOGIN:
       return {
         ...state,
-        result: action.data
+        userData: action.data
       };
     case CLEAN_LOGIN:
       return state;
