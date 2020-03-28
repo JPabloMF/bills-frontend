@@ -11,7 +11,8 @@ const Input = ({
   error,
   name,
   icon,
-  id
+  id,
+  type
 }) => {
   return (
     <div>
@@ -24,6 +25,7 @@ const Input = ({
         error={error}
         name={name}
         icon={icon}
+        type={type}
       />
     </div>
   );
@@ -33,7 +35,8 @@ Input.defaultProps = {
   placeholder: '',
   disabled: false,
   error: false,
-  icon: ''
+  icon: '',
+  type:"text"
 };
 
 Input.propTypes = {
@@ -43,7 +46,8 @@ Input.propTypes = {
   value: PropTypes.string.isRequired,
   error: PropTypes.bool,
   name: PropTypes.string.isRequired,
-  icon: PropTypes.string
+  icon: PropTypes.string,
+  type: PropTypes.string.isRequired
 };
 
 export default Input;
