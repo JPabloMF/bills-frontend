@@ -8,7 +8,7 @@ export const loginReducer = (state = {}, action) => {
         userData: action.data
       };
     case CLEAN_LOGIN:
-      return state;
+      return {};
     default:
       return state;
   }

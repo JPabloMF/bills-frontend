@@ -40,7 +40,7 @@ const SignIn = props => {
         name="password"
         type="password"
       />
-      <Button title="Sign In" type="Submit" />
+      <Button title="Sign In" type="Submit"/>
       <Button title="Clean" type="Button" onClick={handleClean} />
     </form>
   );
